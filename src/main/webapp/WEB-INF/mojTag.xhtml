@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+	<!-- <ui:param name="labelMsg" value="#{not empty labelMsg ? labelMsg : 'defaultLabel'}" /> -->
+ 
+	<div>
+		<ui:insert name="label">
+		
+		<div style="width: 550px; margin-left:auto; margin-right:auto; margin-top:30px; font-size: 35px;
+					text-decoration: underline; color:blue;">
+			<h:outputText id="#{name}_label" value="#{value}" />
+		</div>
+		
+		</ui:insert>
+ 
+	</div>
+</ui:composition>

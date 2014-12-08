@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+		<h:form id="tramwajform" styleClass="tramwajform">
+			
+			<h:panelGrid columns="2">
+				<div>
+				<div class="napis">		
+					<!-- Dodanie tramwaju przy użyciu prostego formularza -->
+					#{msg.dodanieTramwaju1}	
+				</div>											
+				<h:commandButton value="#{msg.buttonDodaj}" styleClass="dodaj_btn" action="simple"/>
+	
+	
+				<div class="napis">		
+					<!-- Dodanie tramwaju wykorzystując validator -->
+					#{msg.dodanieTramwaju2}	
+				</div>											
+				<h:commandButton value="#{msg.buttonDodaj}" styleClass="dodaj_btn" action="walidacja"/>
+				
+				
+				<div class="napis">		
+					<!-- Dodanie tramwaju przy użyciu JSF 2.0 ajax oraz RF -->
+					#{msg.dodanieTramwaju3}	
+				</div>											
+				<h:commandButton value="#{msg.buttonDodaj}" styleClass="dodaj_btn" action="ajax"/>
+				
+				
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				</div>
+			
+			</h:panelGrid>
+				
+			
+		</h:form>
+	</ui:define>
+</ui:composition>

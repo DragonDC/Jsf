@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	
+	<ui:define name="content">
+	
+    <h:form id="showTramwajForm" styleClass="showTramwajForm">
+    	<h:outputStylesheet library="css" name="default.css" target="dataTable" />
+    	
+     <h:dataTable value="#{tramwajBean.allTramwaje}" var="item" border="1" styleClass="tabela" headerClass="naglowek">
+      <f:facet name="header">#{msg.personAllLabel}</f:facet>
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnFirma}</f:facet>
+        <h:inputText value="#{item.firma}" styleClass="napisyEdycja"
+               rendered="#{item.canEdit}" />
+        <h:outputText value="#{item.firma}" styleClass="napisyTabela" rendered="#{not item.canEdit}"/>
+        <!-- #{item.firma} -->
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnModel}</f:facet>
+        <h:inputText value="#{item.model}" styleClass="napisyEdycja"
+               rendered="#{item.canEdit}" />
+        <h:outputText value="#{item.model}" styleClass="napisyTabela" rendered="#{not item.canEdit}"/>
+        <!-- #{item.model} -->
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnKod}</f:facet>
+        <h:inputText value="#{item.kodTramwaju}" styleClass="napisyEdycja"
+               rendered="#{item.canEdit}" />
+        <h:outputText value="#{item.kodTramwaju}" styleClass="napisyTabela" rendered="#{not item.canEdit}"/>
+        <!-- #{item.kodTramwaju} -->
+      </h:column>
+      
+      <!-- <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnDataProdukcji}</f:facet>
+        <h:outputText value="#{item.dataProdukcji}" styleClass="dataTabela"/>
+        #{item.kodTramwaju}
+      </h:column> -->
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnStronaProducenta}</f:facet>
+        <h:outputLink value="#{item.adresStrony}" styleClass="napisyTabela">#{item.adresStrony}</h:outputLink>
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnKolor}</f:facet>
+        <h:inputText value="#{item.kolor}" styleClass="napisyEdycja"
+               rendered="#{item.canEdit}" />
+        <h:outputText value="#{item.kolor}" styleClass="napisyTabela" rendered="#{not item.canEdit}"/>
+        <!-- #{item.kolor} -->
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.tramwajKolumnZdjecie}</f:facet>
+        <h:graphicImage value="#{item.zdjecie}" styleClass="obrazekTabela" />
+      </h:column>
+      
+      <h:column headerClass="kolumna_akcja">
+        <f:facet name="header">#{msg.action}</f:facet>
+        <h:commandButton value="#{msg.actionDelete}" action="#{tramwajBean.deleteTramwaj}" styleClass="buttonUsun"/>
+      
+      	<h:commandButton value="#{msg.showTramwajEdycja}" styleClass="buttonUsun"
+                  action="#{tramwajBean.editTramwaj}" 
+                  rendered="#{not item.canEdit}">        
+                  <f:setPropertyActionListener 
+                     target="#{tramwajBean.tramwaj}" value="#{item}" />
+        </h:commandButton>
+      	
+      	<h:commandButton value="#{msg.showTramwajZapiszZmiany}" rendered="#{item.canEdit}"
+          action="#{tramwajBean.saveTramwaje}" styleClass="dodaj_btn" />
+      
+      </h:column>
+      
+      <!-- <h:column>
+            <f:facet name="header">Edit</f:facet>
+               <h:commandButton value="Edit" 
+                  action="#{tramwajBean.editTramwaj}" 
+                  rendered="#{not tramwaj.canEdit}">        
+                  <f:setPropertyActionListener 
+                     target="#{tramwajBean.tramwaj}" value="#{item}" />
+               </h:commandButton>
+         </h:column> -->
+      
+     </h:dataTable>
+     
+     	
+     
+    </h:form>
+      
+	</ui:define>
+	
+</ui:composition>

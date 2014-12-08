@@ -21,4 +21,28 @@
 		</locale-config>
 
 	</application>
+	<navigation-rule>
+		<display-name>dodanie.xhtml</display-name>
+		<from-view-id>/dodanie.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>ajax</from-action>
+			<to-view-id>/dodanieAjax.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>dodanie.xhtml</display-name>
+		<from-view-id>/dodanie.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>walidacja</from-action>
+			<to-view-id>/dodanieValidation.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>dodanie.xhtml</display-name>
+		<from-view-id>/dodanie.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>simple</from-action>
+			<to-view-id>/dodanieSimple.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

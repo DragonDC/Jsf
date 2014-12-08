@@ -1,37 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:ui="http://java.sun.com/jsf/facelets"
-		xmlns:my="http://dcentek.com/components">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><ui:insert name="windowTitle">#{msg.mainWindowTitle}</ui:insert>
 	</title>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="StylTram.css" rel="stylesheet" type="text/css">
 </h:head>
 <h:body>
   <h:outputStylesheet library="css" name="default.css" target="body" />
 	<div class="heading">
 	  <ui:insert name="heading">
-       <!-- <p>#{naglowek.informacja}</p> -->
-       <my:formInputText name="example1"
-		value="#{naglowek.informacja}" />
-		
-		<div id="czas" class="czas"></div>
-		<script type="text/javascript">
-			function getTime()
-			{
-				return (new Date()).toLocaleTimeString();
-			}
-
-			document.getElementById('czas').innerHTML = getTime();
-
-			setInterval(function() {
-				document.getElementById('czas').innerHTML = getTime();
-			}, 1000);
-		</script>
-		
-		
+	  	<div class="tekstHead">
+       		<p>#{msg.mainHeading}</p>
+       	</div>
      </ui:insert>
     </div>
 	<div class="menuAndContent">
@@ -46,3 +31,4 @@
 	</div>
 </h:body>
 </html>
+ -->

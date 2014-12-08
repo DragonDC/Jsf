@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+		<h:form id="tramwajform" styleClass="tramwajform">
+			<h:panelGrid columns="2">
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				
+				<h:outputText value="#{tramwajBean.tramwaj.setFirma('')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setModel('')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setZdjecie('')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setKodTramwaju('')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setLiczbaMiejsc(1)}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setWysPodlogi('Wysokopodlogowy')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setRozstawOsi('1000 mm')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setKolor('')}" />
+				<h:outputText value="#{tramwajBean.tramwaj.setAdresStrony('')}" />
+
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajFirmaLabel}&#160;&#160;&#160;&#160;&#160;&#160;" />
+					<h:inputText id="firma" value="#{tramwajBean.tramwaj.firma}" required="#{true}" styleClass="pola_wypelniania">
+				</h:inputText>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajModelLabel}&#160;&#160;&#160;&#160;&#160;&#160;" />
+					<h:inputText id="model" value="#{tramwajBean.tramwaj.model}" required="#{true}" styleClass="pola_wypelniania">
+				</h:inputText>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajWysPodlogiLabel}&#160;&#160;" />
+				<h:selectOneMenu value="#{tramwajBean.tramwaj.wysPodlogi}" styleClass="pola_wypelniania">
+				   <f:selectItem itemValue="#{msg.tramwajWysokoscValue1}" itemLabel="#{msg.tramwajWysokosc1}" />
+				   <f:selectItem itemValue="#{msg.tramwajWysokoscValue2}" itemLabel="#{msg.tramwajWysokosc2}" />	 
+				   <f:selectItem itemValue="#{msg.tramwajWysokoscValue3}" itemLabel="#{msg.tramwajWysokosc3}" />	  							
+				</h:selectOneMenu>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajLiczbaMiejscLabel}&#160;&#160;&#160;&#160;&#160;&#160;" />
+					<h:inputText id="liczbaMiejsc" value="#{tramwajBean.tramwaj.liczbaMiejsc}" required="#{true}" styleClass="pola_wypelniania">
+				</h:inputText>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajKodLabel}&#160;&#160;&#160;&#160;&#160;&#160;" />
+					<h:inputText id="kodTramwaju" value="#{tramwajBean.tramwaj.kodTramwaju}" required="#{true}" styleClass="pola_wypelniania">
+				</h:inputText>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajWysPodlogiLabel}&#160;" />
+				<h:selectOneRadio value="#{tramwajBean.tramwaj.rozstawOsi}">
+   					<f:selectItem itemValue="1000 mm" itemLabel="1000 mm" />
+   					<f:selectItem itemValue="1435 mm" itemLabel="1435 mm" />
+   					<f:selectItem itemValue="1524 mm" itemLabel="1524 mm" />
+				</h:selectOneRadio>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajStronaProducenta}&#160;&#160;&#160;&#160;&#160;&#160;" />
+				<h:inputText id="adresStrony" value="#{tramwajBean.tramwaj.adresStrony}" styleClass="pola_wypelniania">
+      				<f:converter converterId="KonwerterUrl" />
+      			</h:inputText>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajKolorLabel}&#160;" />
+				<h:selectOneRadio id="kolor" value="#{tramwajBean.tramwaj.kolor}" layout="pageDirection" required="#{true}">
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue1}" itemLabel="#{msg.tramwajKolor1}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue2}" itemLabel="#{msg.tramwajKolor2}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue3}" itemLabel="#{msg.tramwajKolor3}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue4}" itemLabel="#{msg.tramwajKolor4}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue5}" itemLabel="#{msg.tramwajKolor5}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue6}" itemLabel="#{msg.tramwajKolor6}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue7}" itemLabel="#{msg.tramwajKolor7}" />
+   					<f:selectItem itemValue="#{msg.tramwajKolorValue8}" itemLabel="#{msg.tramwajKolor8}" />
+				</h:selectOneRadio>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				<h:outputText value="&lt;br /&gt;" escape="false"/>
+				
+				
+				<h:outputText value="&#160;&#160;&#160;&#160;#{msg.tramwajZdjecieLabel}&#160;&#160;&#160;&#160;&#160;&#160;" />
+				<h:inputText id="zdjecie" value="#{tramwajBean.tramwaj.zdjecie}" required="#{true}" styleClass="pola_wypelniania"/>
+				
+	
+			</h:panelGrid>
+			
+			<h:outputText value="&lt;br /&gt;" escape="false"/>
+			<h:outputText value="&lt;br /&gt;" escape="false"/>
+			<h:outputText value="&#160;" escape="false"/>
+			
+			<h:commandButton value="#{msg.personFormOKButton}" action="#{tramwajBean.addTramwaj}" styleClass="dodaj_btn"/>
+
+				
+			<h:outputText value="&lt;br /&gt;" escape="false"/>
+			<h:outputText value="&lt;br /&gt;" escape="false"/>	
+				
+			<h:panelGrid>
+				<h:messages showDetail="#{true}" showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

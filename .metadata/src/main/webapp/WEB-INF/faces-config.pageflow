@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14173743139780" configfile="/jsfdemo/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="dodanie.xhtml" x="336" y="36" id="pf14173748303491" outlinks="pf14173748303492 pf14173754716794 pf14173762942616" path="/dodanie.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dodanieAjax.xhtml" x="528" y="36" id="pf14173748303493" inlinks="pf14173748303492" path="/dodanieAjax.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dodanieValidation.xhtml" x="120" y="36" id="pf14173754716795" inlinks="pf14173754716794" path="/dodanieValidation.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dodanieSimple.xhtml" x="313" y="156" id="pf14173762942617" inlinks="pf14173762942616" path="/dodanieSimple.xhtml"/>
+  <links id="pf14173748303492" target="pf14173748303493" source="pf14173748303491" fromaction="ajax"/>
+  <links id="pf14173754716794" target="pf14173754716795" source="pf14173748303491" fromaction="walidacja"/>
+  <links id="pf14173762942616" target="pf14173762942617" source="pf14173748303491" fromaction="simple"/>
+</pageflow:Pageflow>

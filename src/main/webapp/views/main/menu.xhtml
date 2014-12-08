@@ -2,25 +2,24 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui">
   <div>
 	<h:form>
-	  <ul>
-		<li>
-		  <h:commandLink action="home?faces-redirect=true">
-			<h:outputText value="#{msg.linkHome}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="add?faces-redirect=true">
-			<h:outputText value="#{msg.personAddLabel}" />
-		  </h:commandLink></li>
-		<li>
-		  <h:commandLink action="showPersons?faces-redirect=true">
-			 <h:outputText value="#{msg.personAllLabel}" />
-		  </h:commandLink>
-		</li>
-	</ul>
+	     	
+    	<div class="buttons">
+    		<h:commandButton value="#{msg.linkHome}" styleClass="button" action="StronaGlowna"/>
+		</div>
+		
+		<div class="buttons">
+    		<h:commandButton value="#{msg.personAddLabel}" styleClass="button" action="dodanie"/>
+		</div>
+		
+		<div class="buttons">
+    		<h:commandButton value="#{msg.personAllLabel}" styleClass="button" action="showTramwaje"/>
+		</div>
+		
+		
    </h:form>
   </div>
 </ui:composition>
